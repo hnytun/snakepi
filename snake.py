@@ -4,6 +4,7 @@ from time import sleep
 sense = SenseHat()
 sense.clear()
 green = (0, 255, 0)
+interval=0.5
 
 #        <~~~~~~~~--
 body = [[4,3],[3,3]]
@@ -53,7 +54,7 @@ first_event = sense.stick.wait_for_event()
 currentDirection = first_event.direction
 #main game loop
 while(True):
-    sleep(1)
+    sleep(0.5)
     if(len(sense.stick.get_events()) != 0):
         for event in sense.stick.get_events():
             # Check if the joystick was pressed
