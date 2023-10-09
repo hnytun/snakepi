@@ -9,6 +9,7 @@ green = (0, 255, 0)
 body = [[3,3],[4,3],[5,3]]
 sense.set_pixel(body[0][0],body[0][1],green)
 sense.set_pixel(body[1][0],body[1][1],green)
+sense.set_pixel(body[2][0],body[2][1],green)
 
 
 def move(body,direction):
