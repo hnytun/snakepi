@@ -28,7 +28,7 @@ def move(pos,direction):
             pos[1] -= 1
     if(direction == "down"):
         if(pos[1] == 7):
-            pos[0] = 0
+            pos[1] = 0
         else:
             pos[1] += 1
     return pos
