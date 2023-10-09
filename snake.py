@@ -63,7 +63,7 @@ while(True):
     #spawn food
     if(not food_exist):
         food_position = [randrange(8),randrange(8)]
-        sense.set_pixel(food_position[0],food_position[1],red)
+        sense.set_pixel(food_position[0],food_position[1],blue)
         food_exist=True
 
     #if(len(sense.stick.get_events()) != 0):
