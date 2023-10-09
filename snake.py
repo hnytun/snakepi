@@ -46,10 +46,7 @@ def move(body,direction):
         if(i != 0):
             body[i] = body[i-1]
 
-
-
-
-    return pos
+    return body
 
 
 #main game loop
