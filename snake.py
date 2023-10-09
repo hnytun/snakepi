@@ -40,6 +40,7 @@ def move(body,direction):
         if(i != 0):
             body[i] = body[i-1]
 
+    print(body)
     return body
 
 #main game loop
