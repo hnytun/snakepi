@@ -4,7 +4,7 @@ from time import sleep
 sense = SenseHat()
 green = (0, 255, 0)
 
-body = [[2,3],[2,4],[3,5],[3,6],[3,7]]
+body = [[3,3],[4,3],]
 sense.set_pixel(body[0][0],body[0][1],green)
 
 
@@ -47,8 +47,7 @@ def move(body,direction):
 #main game loop
 while(True):
     sleep(1)
-    if(len(sense.stick.get_events()) == 0):
-        print("no action!")
+
     for event in sense.stick.get_events():
         # Check if the joystick was pressed
         if event.action == "pressed":
