@@ -47,8 +47,8 @@ def move(body,direction):
 #main game loop
 while(True):
     sleep(1)
-    if(len(sense.stick.get_events() == 0):
-        print("no action!") 
+    if(len(sense.stick.get_events()) == 0):
+        print("no action!")
     for event in sense.stick.get_events():
         # Check if the joystick was pressed
         if event.action == "pressed":
