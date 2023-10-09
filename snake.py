@@ -54,7 +54,7 @@ first_event = sense.stick.wait_for_event()
 currentDirection = first_event.direction
 #main game loop
 while(True):
-    sleep(0.5)
+    sleep(2)
     #if(len(sense.stick.get_events()) != 0):
     for event in sense.stick.get_events():
         # Check if the joystick was pressed
