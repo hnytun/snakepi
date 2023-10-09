@@ -19,25 +19,25 @@ def move(body,direction):
     head = body[0]
     #move head first
     if(direction == "left"):
-        if(pos[0] == 0):
-            pos[0] = 7
+        if(head[0] == 0):
+            head[0] = 7
         else:
-            pos[0] -= 1
+            head[0] -= 1
     if(direction == "right"):
-        if(pos[0] == 7):
-            pos[0] = 0
+        if(head[0] == 7):
+            head[0] = 0
         else:
-            pos[0] += 1
+            head[0] += 1
     if(direction == "up"):
-        if(pos[1] == 0):
-            pos[1] = 7
+        if(head[1] == 0):
+            head[1] = 7
         else:
-            pos[1] -= 1
+            head[1] -= 1
     if(direction == "down"):
-        if(pos[1] == 7):
-            pos[1] = 0
+        if(head[1] == 7):
+            head[1] = 0
         else:
-            pos[1] += 1
+            head[1] += 1
 
     #move rest of body
 
