@@ -54,6 +54,8 @@ def move(body,direction):
     return body
 
 
+
+food_position = [randrange(8),randrange(8)]
 first_event = sense.stick.wait_for_event()
 currentDirection = first_event.direction
 #main game loop
@@ -63,10 +65,10 @@ while(True):
     #spawn food
     if(not food_exist):
         food_position = [randrange(8),randrange(8)]
-        sense.set_pixel(food_position[0],food_position[1],blue)
         food_exist=True
         print("food spawned on ", food_position)
-
+    if(food_exist):
+        sense.set_pixel(food_position[0],food_position[1],blue)
     #if(len(sense.stick.get_events()) != 0):
     for event in sense.stick.get_events():
         # Check if the joystick was pressed
