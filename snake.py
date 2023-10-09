@@ -42,6 +42,7 @@ def move(body,direction):
     #move rest of body
 
     for i in range(len(body)-1, -1, -1):
+        print(i)
         #ignore head
         if(i != 0):
             body[i] = body[i-1]
