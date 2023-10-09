@@ -4,15 +4,9 @@ from time import sleep
 sense = SenseHat()
 green = (0, 255, 0)
 
-
-
-body = [[2,3],[3,3]]
+body = [[2,3],[2,4],[3,5]]
 sense.set_pixel(body[0][0],body[0][1],green)
 sense.set_pixel(body[1][0],body[1][1],green)
-
-
-
-
 
 def move(body,direction):
 
@@ -47,7 +41,6 @@ def move(body,direction):
             body[i] = body[i-1]
 
     return body
-
 
 #main game loop
 while(True):
