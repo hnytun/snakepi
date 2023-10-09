@@ -91,6 +91,9 @@ while(True):
 
         if(body[0] == food_position):
             print("snake hit food!")
+            body.append(food_position)
+            food_exist=False
+            sense.clear()
 
 
 
