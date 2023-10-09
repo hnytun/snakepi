@@ -16,33 +16,32 @@ sense.set_pixel(body[1][0],body[1][1],green)
 
 def move(body,direction):
 
-    head = body[0]
+    head =
     #move head first
     if(direction == "left"):
-        if(head[0] == 0):
-            head[0] = 7
+        if(body[0][0] == 0):
+            body[0][0] = 7
         else:
-            head[0] -= 1
+            body[0][0] -= 1
     if(direction == "right"):
-        if(head[0] == 7):
-            head[0] = 0
+        if(body[0][0] == 7):
+            body[0][0] = 0
         else:
-            head[0] += 1
+            body[0][0] += 1
     if(direction == "up"):
-        if(head[1] == 0):
-            head[1] = 7
+        if(body[0][1] == 0):
+            body[0][1] = 7
         else:
-            head[1] -= 1
+            body[0][1] -= 1
     if(direction == "down"):
-        if(head[1] == 7):
-            head[1] = 0
+        if(body[0][1] == 7):
+            body[0][1] = 0
         else:
-            head[1] += 1
+            body[0][1] += 1
 
     #move rest of body
 
     for i in range(len(body)-1, -1, -1):
-        print(i)
         #ignore head
         if(i != 0):
             body[i] = body[i-1]
