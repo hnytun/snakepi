@@ -6,8 +6,9 @@ green = (0, 255, 0)
 
 
 
-pos = [2,2]
-sense.set_pixel(pos[0],pos[1],green)
+pos = [[2,2]]
+sense.set_pixel(pos[0],pos[0][1],green)
+sense.set_pixel(pos[1][0],pos[1][1],green)
 
 
 def move(pos,direction):
@@ -34,6 +35,7 @@ def move(pos,direction):
     return pos
 
 
+#main game loop
 while(True):
     #sleep(1)
     for event in sense.stick.get_events():
