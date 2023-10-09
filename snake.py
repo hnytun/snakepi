@@ -1,6 +1,7 @@
 from sense_hat import SenseHat
-sense = SenseHat()
+from time import sleep
 
+sense = SenseHat()
 green = (0, 0, 255)
 
 sense.clear()
