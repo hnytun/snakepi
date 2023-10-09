@@ -4,7 +4,7 @@ from time import sleep
 sense = SenseHat()
 green = (0, 255, 0)
 
-body = [[2,3],[2,4],[3,5]]
+body = [[2,3],[2,4],[3,5],[3,6],[3,7]]
 sense.set_pixel(body[0][0],body[0][1],green)
 sense.set_pixel(body[1][0],body[1][1],green)
 
