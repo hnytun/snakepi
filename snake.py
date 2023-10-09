@@ -10,7 +10,8 @@ sense.set_pixel(body[1][0],body[1][1],green)
 
 def move(body,direction):
 
-
+    print("-----------current body----------")
+    print(body)
     #move head first
     if(direction == "left"):
         if(body[0][0] == 0):
@@ -36,6 +37,7 @@ def move(body,direction):
     #move rest of body
 
     for i in range(len(body)-1, -1, -1):
+
         #ignore head
         if(i != 0):
             body[i] = body[i-1]
