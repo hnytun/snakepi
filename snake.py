@@ -5,15 +5,17 @@ sense = SenseHat()
 sense.clear()
 green = (0, 255, 0)
 
-#        <~~~~~~~~--         
+#        <~~~~~~~~--
 body = [[4,3],[3,3]]
 sense.set_pixel(body[0][0],body[0][1],green)
 sense.set_pixel(body[1][0],body[1][1],green)
 
 
 
-def move(body,direction):
+#flags
+currentDirection="None"
 
+def move(body,direction):
 
     #move rest of body
     for i in range(len(body)-1, -1, -1):
@@ -44,29 +46,30 @@ def move(body,direction):
             body[0][1] = 0
         else:
             body[0][1] += 1
-
-
-
-    print(body)
     return body
 
+
+first_event = sense.stick.wait_for_event()
+currentDirection = first_event.direction
 #main game loop
 while(True):
-
-    for event in sense.stick.get_events():
-        # Check if the joystick was pressed
-        if event.action == "pressed":
-            if(event.direction == "left"):
-                body = move(body,"left")
-            if(event.direction == "right"):
-                body = move(body,"right")
-            if(event.direction == "up"):
-                body = move(body,"up")
-            if(event.direction == "down"):
-                body = move(body,"down")
-            sense.clear()
-            for bodypart in body:
-                sense.set_pixel(bodypart[0],bodypart[1],green)
+    sleep(1)
+    if(len(sense.stick.get_events()) != 0):
+        for event in sense.stick.get_events():
+            # Check if the joystick was pressed
+            if event.action == "pressed":
+                if(event.direction == "left"):
+                    currentDirection="left"
+                if(event.direction == "right"):
+                    currentDirection="right"
+                if(event.direction == "up"):
+                    currentDirection="up"
+                if(event.direction == "down"):
+                    currentDirection="down"
+    body = move(body,currentDirection)
+    sense.clear()
+    for bodypart in body:
+        sense.set_pixel(bodypart[0],bodypart[1],green)
 
 
 
