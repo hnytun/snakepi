@@ -1,9 +1,12 @@
 from sense_hat import SenseHat
 from time import sleep
+from random import randrange
+
 
 sense = SenseHat()
 sense.clear()
 green = (0, 255, 0)
+red = (255,0,0)
 interval=0.5
 
 #        <~~~~~~~~--
@@ -15,6 +18,7 @@ sense.set_pixel(body[1][0],body[1][1],green)
 
 #flags
 currentDirection="None"
+food_exist=False
 
 def move(body,direction):
 
@@ -55,6 +59,13 @@ currentDirection = first_event.direction
 #main game loop
 while(True):
     sleep(0.1)
+
+    #spawn food
+    if(not food_exist):
+        food_position = [randrange(8),randrange(8)]
+        sense.set_pixel(food_position[0],food_position[1],red)
+        food_exist=True
+
     #if(len(sense.stick.get_events()) != 0):
     for event in sense.stick.get_events():
         # Check if the joystick was pressed
