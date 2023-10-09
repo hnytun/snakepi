@@ -67,8 +67,7 @@ while(True):
         food_position = [randrange(8),randrange(8)]
         food_exist=True
         print("food spawned on ", food_position)
-    if(food_exist):
-        sense.set_pixel(food_position[0],food_position[1],blue)
+
     #if(len(sense.stick.get_events()) != 0):
     for event in sense.stick.get_events():
         # Check if the joystick was pressed
@@ -85,6 +84,8 @@ while(True):
     sense.clear()
     for bodypart in body:
         sense.set_pixel(bodypart[0],bodypart[1],green)
+    if(food_exist):
+        sense.set_pixel(food_position[0],food_position[1],blue)
 
 
 
