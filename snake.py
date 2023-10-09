@@ -6,7 +6,7 @@ from random import randrange
 sense = SenseHat()
 sense.clear()
 green = (0, 255, 0)
-red = (255,0,0)
+blue = (0,0,255)
 interval=0.5
 
 #        <~~~~~~~~--
@@ -58,7 +58,7 @@ first_event = sense.stick.wait_for_event()
 currentDirection = first_event.direction
 #main game loop
 while(True):
-    sleep(0.1)
+    sleep(0.5)
 
     #spawn food
     if(not food_exist):
