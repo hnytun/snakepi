@@ -6,19 +6,20 @@ green = (0, 255, 0)
 
 
 
-pos = (2,2)
-sense.set_pixel(pos[0],pos[1],green)
+posX = 2
+posY = 2
+sense.set_pixel(posX,posY,green)
 
 
 def move(pos,direction):
     if(direction == "left"):
-        pos[0] -= 1
+        posX -= 1
     if(direction == "right"):
-        pos[0] += 1
+        posX += 1
     if(direction == "up"):
-        pos[1] -= 1
+        posY -= 1
     if(direction == "down"):
-        pos[1] += 1
+        posY += 1
 
     return pos
 
@@ -37,7 +38,7 @@ while(True):
             if(event.direction == "down"):
                 pos = move(pos,"down")
             sense.clear()
-            sense.set_pixel(pos[0],pos[1],green)
+            sense.set_pixel(posX,posY,green)
 
 
 
