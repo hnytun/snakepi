@@ -6,11 +6,17 @@ green = (0, 255, 0)
 
 
 
-pos = [[2,3],[3,3]]
+body = [[2,3],[3,3]]
 sense.set_pixel(pos[0][0],pos[0][1],green)
 sense.set_pixel(pos[1][0],pos[1][1],green)
 
-def moveHead(pos,direction):
+
+
+
+
+def move(body,direction):
+
+    #move head first
     if(direction == "left"):
         if(pos[0] == 0):
             pos[0] = 7
@@ -31,6 +37,17 @@ def moveHead(pos,direction):
             pos[1] = 0
         else:
             pos[1] += 1
+
+    #move rest of body
+
+    for i in range(len(body)-1, -1, -1):
+        #ignore head
+        if(i != 0):
+            body[i] = body[i-1]
+
+
+
+
     return pos
 
 
@@ -41,15 +58,16 @@ while(True):
         # Check if the joystick was pressed
         if event.action == "pressed":
             if(event.direction == "left"):
-                pos = moveHead(pos[0],"left")
+                pos = move(body,"left")
             if(event.direction == "right"):
-                pos = moveHead(pos[0],"right")
+                pos = move(body,"right")
             if(event.direction == "up"):
-                pos = moveHead(pos[0],"up")
+                pos = move(body,"up")
             if(event.direction == "down"):
-                pos = moveHead(pos[0],"down")
+                pos = move(body,"down")
             sense.clear()
-            sense.set_pixel(pos[0],pos[1],green)
+            for bodypart in body:
+                sense.set_pixel(bodypart[0],bodypart[1],green)
 
 
 
