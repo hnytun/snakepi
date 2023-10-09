@@ -55,18 +55,18 @@ currentDirection = first_event.direction
 #main game loop
 while(True):
     sleep(0.5)
-    if(len(sense.stick.get_events()) != 0):
-        for event in sense.stick.get_events():
-            # Check if the joystick was pressed
-            if event.action == "pressed":
-                if(event.direction == "left"):
-                    currentDirection="left"
-                if(event.direction == "right"):
-                    currentDirection="right"
-                if(event.direction == "up"):
-                    currentDirection="up"
-                if(event.direction == "down"):
-                    currentDirection="down"
+    #if(len(sense.stick.get_events()) != 0):
+    for event in sense.stick.get_events():
+        # Check if the joystick was pressed
+        if event.action == "pressed":
+            if(event.direction == "left"):
+                currentDirection="left"
+            if(event.direction == "right"):
+                currentDirection="right"
+            if(event.direction == "up"):
+                currentDirection="up"
+            if(event.direction == "down"):
+                currentDirection="down"
     body = move(body,currentDirection)
     sense.clear()
     for bodypart in body:
