@@ -84,8 +84,13 @@ while(True):
     sense.clear()
     for bodypart in body:
         sense.set_pixel(bodypart[0],bodypart[1],green)
+
+
     if(food_exist):
         sense.set_pixel(food_position[0],food_position[1],blue)
+
+        if(body[0] == food_position):
+            print("snake hit food!")
 
 
 
