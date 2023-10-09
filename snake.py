@@ -10,7 +10,7 @@ pos = (2,2)
 sense.set_pixel(pos[0],pos[1],green)
 
 
-def move(direction,pos):
+def move(pos,direction):
     if(direction == "left"):
         pos[0] -= 1
     if(direction == "right"):
