@@ -40,6 +40,7 @@ def move(body,direction):
 
         #ignore head
         if(i != 0):
+            print(body[i], " at bodypart nr ", i, " gets position of ", body[i-1], " at bodypart ",i-1)
             body[i] = body[i-1]
 
     print(body)
