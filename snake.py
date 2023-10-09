@@ -3,6 +3,7 @@ sense = SenseHat()
 
 green = (0, 0, 255)
 
+sense.clear()
 sense.set_pixel(2,2,green)
 
 
