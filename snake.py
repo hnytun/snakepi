@@ -6,7 +6,7 @@ green = (0, 255, 0)
 
 body = [[2,3],[2,4],[3,5],[3,6],[3,7]]
 sense.set_pixel(body[0][0],body[0][1],green)
-sense.set_pixel(body[1][0],body[1][1],green)
+
 
 def move(body,direction):
 
@@ -35,9 +35,7 @@ def move(body,direction):
             body[0][1] += 1
 
     #move rest of body
-
     for i in range(len(body)-1, -1, -1):
-
         #ignore head
         if(i != 0):
             print(body[i], " at bodypart nr ", i, " gets position of ", body[i-1], " at bodypart ",i-1)
@@ -48,7 +46,9 @@ def move(body,direction):
 
 #main game loop
 while(True):
-    #sleep(1)
+    sleep(1)
+    if(len(sense.stick.get_events() == 0):
+        print("no action!") 
     for event in sense.stick.get_events():
         # Check if the joystick was pressed
         if event.action == "pressed":
