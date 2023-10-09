@@ -16,6 +16,7 @@ sense.set_pixel(pos[1][0],pos[1][1],green)
 
 def move(body,direction):
 
+    head = body[0]
     #move head first
     if(direction == "left"):
         if(pos[0] == 0):
