@@ -22,12 +22,12 @@ def move(pos,direction):
         else:
             pos[0] += 1
     if(direction == "up"):
-        if(pos[0] == 0):
+        if(pos[1] == 0):
             pos[1] == 7
         else:
             pos[1] -= 1
     if(direction == "down"):
-        if(pos[0] == 7):
+        if(pos[1] == 7):
             pos[0] == 0
         else:
             pos[1] += 1
