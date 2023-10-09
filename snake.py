@@ -93,7 +93,7 @@ while(True):
             print("snake hit food!")
             body.append(food_position)
             food_exist=False
-            sense.clear()
+            
 
 
 
