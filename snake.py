@@ -40,9 +40,9 @@ def move(body,direction):
     #move rest of body
     for i in range(len(body)-1, -1, -1):
         #ignore head
-        if(i != 0):
-            print(body[i], " at bodypart nr ", i, " gets position of ", body[i-1], " at bodypart ",i-1)
-            body[i] = body[i-1].copy()
+
+        print(body[i], " at bodypart nr ", i, " gets position of ", body[i-1], " at bodypart ",i-1)
+        body[i] = body[i-1].copy()
 
     print(body)
     return body
