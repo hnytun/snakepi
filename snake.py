@@ -13,25 +13,24 @@ sense.set_pixel(pos[0],pos[1],green)
 def move(pos,direction):
     if(direction == "left"):
         if(pos[0] == 0):
-            pos[0] == 7
+            pos[0] = 7
         else:
             pos[0] -= 1
     if(direction == "right"):
         if(pos[0] == 7):
-            pos[0] == 0
+            pos[0] = 0
         else:
             pos[0] += 1
     if(direction == "up"):
         if(pos[1] == 0):
-            pos[1] == 7
+            pos[1] = 7
         else:
             pos[1] -= 1
     if(direction == "down"):
         if(pos[1] == 7):
-            pos[0] == 0
+            pos[0] = 0
         else:
             pos[1] += 1
-
     return pos
 
 
