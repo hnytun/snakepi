@@ -6,8 +6,8 @@ green = (0, 255, 0)
 
 
 
-pos = [[2,2]]
-sense.set_pixel(pos[0],pos[0][1],green)
+pos = [[2,3],[3,3]]
+sense.set_pixel(pos[0][0],pos[0][1],green)
 sense.set_pixel(pos[1][0],pos[1][1],green)
 
 
