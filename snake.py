@@ -94,9 +94,7 @@ while(not game_over):
             body.append(food_position)
             food_exist=False
 
-    dups = {tuple(x) for x in body if body.count(x)>1}
-    if(len(dups) > 0):
-        game_over = True
+        
 
 
 
