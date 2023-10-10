@@ -20,6 +20,7 @@ sense.set_pixel(body[1][0],body[1][1],green)
 currentDirection="None"
 food_exist=False
 game_over=False
+rate = 0.5
 def move(body,direction):
 
     #move body
@@ -58,7 +59,7 @@ first_event = sense.stick.wait_for_event()
 currentDirection = first_event.direction
 #main game loop
 while(not game_over):
-    sleep(0.5)
+    sleep(rate)
     #for bodypart in body[2:]:
     #    if(body[0] == bodypart):
     #        game_over = True
@@ -96,6 +97,7 @@ while(not game_over):
             body.append(food_position)
             food_exist=False
             print("hit food!")
+            rate = rate * 0.9
 
 
     for bodypart in body[1:]:
