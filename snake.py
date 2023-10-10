@@ -92,7 +92,9 @@ while(not game_over):
             body.append(food_position)
             food_exist=False
 
-
+    for bodypart in body:
+        if(body[0] == bodypart):
+            game_over = True
 
 
 
