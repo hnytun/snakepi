@@ -93,6 +93,7 @@ while(not game_over):
         if(body[0] == food_position):
             body.append(food_position)
             food_exist=False
+            print("hit food!")
 
     print(body)
 
