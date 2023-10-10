@@ -94,6 +94,9 @@ while(not game_over):
             body.append(food_position)
             food_exist=False
 
+    if (not len(set(body)) == len(body)):
+        game_over=True
+
 
 
 
