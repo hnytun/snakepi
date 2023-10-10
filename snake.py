@@ -105,9 +105,9 @@ while(not game_over):
             print("duplicate!")
             print(body)
             game_over = True
-            sense.show_message(0.5,"game over, press any key to restart")
-
+            sense.show_message("game over, press any direction to restart",text_speed=0.5)
             first_event = sense.stick.wait_for_event()
+
 
 
 
