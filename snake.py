@@ -88,7 +88,7 @@ while(not game_over):
 
 
     if(food_exist):
-        sense.set_pixel(food_position[0],food_position[1],blue)
+        sense.set_pixel(food_position[0],food_position[1],green)
 
         if(body[0] == food_position):
             body.insert(0,food_position)
