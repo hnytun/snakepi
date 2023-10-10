@@ -95,7 +95,7 @@ while(not game_over):
             food_exist=False
             print("hit food!")
 
-    for bodypart in body[1:0]:
+    for bodypart in body[1:]:
         if(bodypart == body[0]):
             print("duplicate!")
             print(body)
