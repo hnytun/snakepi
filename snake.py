@@ -103,6 +103,7 @@ while(not game_over):
             print("duplicate!")
             print(body)
             game_over = True
+            sense.show_message("game over")
 
 
 
