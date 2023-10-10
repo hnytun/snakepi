@@ -78,7 +78,8 @@ while(True):
             if(event.direction == "down"):
                 currentDirection="down"
     body = move(body,currentDirection)
-
+    sense.clear()
+    
     for bodypart in body:
         sense.set_pixel(bodypart[0],bodypart[1],green)
 
@@ -90,7 +91,7 @@ while(True):
             body.append(food_position)
             food_exist=False
 
-    sense.clear()
+
 
 
 
