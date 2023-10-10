@@ -58,10 +58,10 @@ first_event = sense.stick.wait_for_event()
 currentDirection = first_event.direction
 #main game loop
 while(not game_over):
-    for bodypart in body:
+    sleep(0.5)
+    for bodypart in body[2:]:
         if(body[0] == bodypart):
             game_over = True
-    sleep(0.5)
 
     #spawn food
     if(not food_exist):
