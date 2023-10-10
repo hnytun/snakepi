@@ -22,15 +22,13 @@ food_exist=False
 
 def move(body,direction):
 
-    #move rest of body
+    #move body
     for i in range(len(body)-1, -1, -1):
         #ignore head
         if(i != 0):
-            print(body[i], " at bodypart nr ", i, " gets position of ", body[i-1], " at bodypart ",i-1)
             body[i] = body[i-1].copy()
-    print("-----------current body----------")
-    print(body)
-    #move head first
+
+    #move head
     if(direction == "left"):
         if(body[0][0] == 0):
             body[0][0] = 7
@@ -66,7 +64,6 @@ while(True):
     if(not food_exist):
         food_position = [randrange(8),randrange(8)]
         food_exist=True
-        print("food spawned on ", food_position)
 
     #if(len(sense.stick.get_events()) != 0):
     for event in sense.stick.get_events():
@@ -81,7 +78,7 @@ while(True):
             if(event.direction == "down"):
                 currentDirection="down"
     body = move(body,currentDirection)
-    sense.clear()
+
     for bodypart in body:
         sense.set_pixel(bodypart[0],bodypart[1],green)
 
@@ -90,11 +87,10 @@ while(True):
         sense.set_pixel(food_position[0],food_position[1],blue)
 
         if(body[0] == food_position):
-            print("snake hit food!")
             body.append(food_position)
             food_exist=False
-            
 
+    sense.clear()
 
 
 
