@@ -59,9 +59,9 @@ currentDirection = first_event.direction
 #main game loop
 while(not game_over):
     sleep(0.5)
-    for bodypart in body[2:]:
-        if(body[0] == bodypart):
-            game_over = True
+    #for bodypart in body[2:]:
+    #    if(body[0] == bodypart):
+    #        game_over = True
 
     #spawn food
     if(not food_exist):
