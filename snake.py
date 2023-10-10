@@ -94,7 +94,8 @@ while(not game_over):
             body.append(food_position)
             food_exist=False
 
-        
+    print(body)
+
 
 
 
