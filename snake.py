@@ -98,11 +98,12 @@ while(not game_over):
 
     for bodypart in body:
         sense.set_pixel(bodypart[0],bodypart[1],green)
-        
+
     for bodypart in body[1:]:
         if(bodypart == body[0]):
             print("duplicate!")
             print(body)
+            game_over = True
 
 
 
