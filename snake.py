@@ -91,7 +91,7 @@ while(not game_over):
         sense.set_pixel(food_position[0],food_position[1],blue)
 
         if(body[0] == food_position):
-            body.append(food_position)
+            body.insert(0,food_position)
             food_exist=False
             print("hit food!")
 
