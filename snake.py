@@ -79,10 +79,11 @@ while(True):
                 currentDirection="down"
     body = move(body,currentDirection)
     sense.clear()
-    
+
     for bodypart in body:
         sense.set_pixel(bodypart[0],bodypart[1],green)
-
+        if(body[0] == bodypart):
+            break
 
     if(food_exist):
         sense.set_pixel(food_position[0],food_position[1],blue)
@@ -90,6 +91,8 @@ while(True):
         if(body[0] == food_position):
             body.append(food_position)
             food_exist=False
+
+
 
 
 
