@@ -19,7 +19,7 @@ sense.set_pixel(body[1][0],body[1][1],green)
 #flags
 currentDirection="None"
 food_exist=False
-
+game_over=False
 def move(body,direction):
 
     #move body
@@ -57,7 +57,7 @@ food_position = [randrange(8),randrange(8)]
 first_event = sense.stick.wait_for_event()
 currentDirection = first_event.direction
 #main game loop
-while(True):
+while(not game_over):
     sleep(0.5)
 
     #spawn food
@@ -83,7 +83,7 @@ while(True):
     for bodypart in body:
         sense.set_pixel(bodypart[0],bodypart[1],green)
         if(body[0] == bodypart):
-            break
+            game_over = True
 
     if(food_exist):
         sense.set_pixel(food_position[0],food_position[1],blue)
