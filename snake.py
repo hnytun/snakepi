@@ -58,7 +58,9 @@ first_event = sense.stick.wait_for_event()
 currentDirection = first_event.direction
 #main game loop
 while(not game_over):
-
+    for bodypart in body:
+        if(body[0] == bodypart):
+            game_over = True
     sleep(0.5)
 
     #spawn food
@@ -83,8 +85,7 @@ while(not game_over):
 
     for bodypart in body:
         sense.set_pixel(bodypart[0],bodypart[1],green)
-        if(body[0] == bodypart):
-            game_over = True
+
 
     if(food_exist):
         sense.set_pixel(food_position[0],food_position[1],blue)
