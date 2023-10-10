@@ -68,15 +68,6 @@ while(not game_over):
         food_position = [randrange(8),randrange(8)]
         food_exist=True
 
-    if(food_exist):
-        sense.set_pixel(food_position[0],food_position[1],blue)
-
-        if(body[0] == food_position):
-            body.append(food_position)
-            food_exist=False
-            print("hit food!")
-
-
     #if(len(sense.stick.get_events()) != 0):
     for event in sense.stick.get_events():
         # Check if the joystick was pressed
@@ -96,8 +87,18 @@ while(not game_over):
         sense.set_pixel(bodypart[0],bodypart[1],green)
 
 
+    if(food_exist):
+        sense.set_pixel(food_position[0],food_position[1],blue)
 
-    print(body)
+        if(body[0] == food_position):
+            body.append(food_position)
+            food_exist=False
+            print("hit food!")
+
+    for bodypart in body:
+        if(bodypart == body[0]):
+            print("duplicate!")
+            print(body)
 
 
 
