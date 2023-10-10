@@ -67,7 +67,7 @@ while(not game_over):
     if(not food_exist):
         food_position = [randrange(8),randrange(8)]
         food_exist=True
-        sense.set_pixel(food_position[0],food_position[1],green)
+
 
     #if(len(sense.stick.get_events()) != 0):
     for event in sense.stick.get_events():
@@ -89,8 +89,8 @@ while(not game_over):
         sense.set_pixel(bodypart[0],bodypart[1],green)
 
 
-    #if(food_exist):
-    #
+    if(food_exist):
+        sense.set_pixel(food_position[0],food_position[1],green)
 
         if(body[0] == food_position):
             body.append(food_position)
