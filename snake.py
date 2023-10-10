@@ -59,9 +59,6 @@ currentDirection = first_event.direction
 #main game loop
 while(not game_over):
 
-    for bodypart in body:
-        if(body[0] == bodypart):
-            game_over = True
     sleep(0.5)
 
     #spawn food
