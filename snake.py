@@ -84,8 +84,8 @@ while(not game_over):
     sense.clear()
 
     #works to put pixels here
-    #for bodypart in body:
-    #    sense.set_pixel(bodypart[0],bodypart[1],green)
+    for bodypart in body:
+        sense.set_pixel(bodypart[0],bodypart[1],green)
 
 
     if(food_exist):
@@ -96,14 +96,12 @@ while(not game_over):
             food_exist=False
             print("hit food!")
 
-    for bodypart in body:
-        sense.set_pixel(bodypart[0],bodypart[1],green)
 
     for bodypart in body[1:]:
-        if(bodypart == body[0]):
+        if(bodypart == body[0] and bodypart != food_position):
             print("duplicate!")
             print(body)
-            #game_over = True
+            game_over = True
 
 
 
