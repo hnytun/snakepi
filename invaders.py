@@ -32,17 +32,17 @@ class Ship:
 
 def projectile_task():
 
+    gray=(0,0,0)
     x=1
-    y=7
+    y=8
     print("Projectile assigned to thread: {}".format(threading.current_thread().name))
     print("ID of process running projectile: {}".format(os.getpid()))
     
 
-    while(y > -1 ):
-        sleep(0.5)
-        sense.clear()
-        sense.set_pixel(x,y,blue)
-        y-=1
+    for i in range(8, -1, -1):
+        sense.set_pixel(x,i+1,gray)
+        sense.set_pixel(x,i,blue)
+
     sense.clear()
 
     
@@ -52,7 +52,7 @@ sense.clear(blue)
 sense.set_pixel(3,3,(0,0,0))
 
 
-"""
+
 ship = Ship(2,green)
 while(True):
     
@@ -68,7 +68,7 @@ while(True):
                 projectile = threading.Thread(target=projectile_task, name='projectile')
                 projectile.start()
 
-"""
+
 
 
 
