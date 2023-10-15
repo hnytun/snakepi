@@ -39,6 +39,7 @@ def projectile_task():
     
 
     for i in range(0,10):
+        sleep(0.5)
         print("pew")
 
     
