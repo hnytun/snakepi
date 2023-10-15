@@ -13,8 +13,7 @@ invader_exist=False
 invader_positions=[]
 projectile_positions=[]
 game_over=False
-sense.clear()
-ship = Ship(2,7,green)
+
 
 class Ship:
 
@@ -35,6 +34,8 @@ class Ship:
     def render(self):
         sense.set_pixel(self.x,self.y,self.color)
 
+sense.clear()
+ship = Ship(2,7,green)
 
 def projectile_task(ship_position_x):
 
