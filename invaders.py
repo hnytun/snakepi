@@ -57,6 +57,18 @@ def invader_task():
     sense.set_pixel(x,y,red)
     print("ID of process running projectile: {}".format(os.getpid()))
 
+    while(True):
+        sleep(0.05)
+        if(y != 0):
+            sense.set_pixel(x,y,gray)
+        y+=1
+        if(y != 0):
+            sense.set_pixel(x,y,red)
+        else:
+            sense.set_pixel(x,y-1,gray)
+            break
+    
+
 sense.clear()
 
 ship = Ship(2,7,green)
@@ -66,7 +78,7 @@ while(True):
         invader = threading.Thread(target=invader_task, name='invader')
         invader.start()
         invader_exist=True
-        
+
     for event in sense.stick.get_events():
         # Check if the joystick was pressed
         if event.action == "pressed":
