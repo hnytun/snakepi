@@ -65,6 +65,7 @@ def invader_task():
             sense.set_pixel(x,i-1,gray)
 
         if(i==7):
+            sleep(1)
             sense.set_pixel(x,i,gray)
 
    
