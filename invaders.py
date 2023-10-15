@@ -10,6 +10,11 @@ blue = (0,0,255)
 gray=(0,0,0)
 red=(232,41,41)
 invader_exist=False
+invader_positions=[]
+projectile_positions=[]
+game_over=False
+sense.clear()
+ship = Ship(2,7,green)
 
 class Ship:
 
@@ -59,7 +64,8 @@ def invader_task():
 
     for i in range(8):
 
-
+        if((x,i) == (ship.x,ship.y)):
+            game_over = True
         #remove last pixel
         if(i != 0):
             sense.set_pixel(x,i-1,gray)
@@ -67,16 +73,17 @@ def invader_task():
         #set pixel
         sense.set_pixel(x,i,red)
 
-
         sleep(1)
         if(i == 7):
             sense.set_pixel(x,i,gray)
     
+        
 
-sense.clear()
-
-ship = Ship(2,7,green)
 while(True):
+
+    if(game_over):
+        print("game over!")
+        break
 
     if(not invader_exist):
         invader = threading.Thread(target=invader_task, name='invader')
