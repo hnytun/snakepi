@@ -9,7 +9,7 @@ green = (0,255,0)
 blue = (0,0,255)
 gray=(0,0,0)
 red=(232,41,41)
-
+invader_exist=False
 
 class Ship:
 
@@ -50,7 +50,7 @@ def projectile_task(ship_position_x):
     
 
 def invader_task():
-    
+
     x=randrange(8)
     y=0
     
@@ -61,8 +61,10 @@ sense.clear()
 
 ship = Ship(2,7,green)
 while(True):
-    invader = threading.Thread(target=invader_task, name='invader')
-    invader.start()
+
+    if(not invader_exist):
+        invader = threading.Thread(target=invader_task, name='invader')
+        invader.start()
     for event in sense.stick.get_events():
         # Check if the joystick was pressed
         if event.action == "pressed":
