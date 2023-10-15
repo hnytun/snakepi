@@ -58,15 +58,16 @@ def invader_task():
     print("ID of process running projectile: {}".format(os.getpid()))
 
     for i in range(8):
-        
 
-        sense.set_pixel(x,i,red)
+
+        #remove last pixel
         if(i != 0):
             sense.set_pixel(x,i-1,gray)
+        
+        #set pixel
+        sense.set_pixel(x,i,red)
 
-        if(i==7):
-            #sleep(1)
-            sense.set_pixel(x,i,gray)
+     
         sleep(1)
    
     
