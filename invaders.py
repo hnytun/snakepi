@@ -87,7 +87,7 @@ while(True):
 
     
     if(game_over):
-        print("game over!")
+        sense.show_message("game over!")
         break
 
     if(not invader_exist):
