@@ -23,6 +23,7 @@ class Ship:
         sense.set_pixel(self.x,7,self.color)
     
     def move(self,direction):
+        sense.clear()
         if(direction == "left"):
             self.x -=1
         else:
