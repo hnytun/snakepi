@@ -38,7 +38,7 @@ sense.clear()
 ship = Ship(2,7,green)
 
 def projectile_task(ship_position_x):
-
+    global game_over
     x=ship_position_x
     y=7
     print("ID of process running projectile: {}".format(os.getpid()))
@@ -66,7 +66,7 @@ def invader_task():
     for i in range(8):
         print("projectile: ",(x,i))
         print("ship: ", (ship.x,ship.y))
-        projectile_positions.append((x,i))
+
         if((x,i) == (ship.x,ship.y)):
             game_over = True
 
