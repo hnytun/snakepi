@@ -16,6 +16,7 @@ class Ship:
     def __init__(self,x,color):
         self.x=x
         self.color = color
+        self.render()
 
     def render(self):
         sense.set_pixel(self.x,0,self.color)
