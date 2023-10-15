@@ -64,7 +64,8 @@ def invader_task():
     print("ID of process running projectile: {}".format(os.getpid()))
 
     for i in range(8):
-
+        print("projectile: ",(x,y))
+        print("ship: ", (ship.x,ship.y))
         if((x,i) == (ship.x,ship.y)):
             game_over = True
         #remove last pixel
