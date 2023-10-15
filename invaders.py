@@ -43,6 +43,7 @@ def projectile_task():
         sense.clear()
         sense.set_pixel(x,y,blue)
         y-=1
+    sense.clear()
 
     
 
