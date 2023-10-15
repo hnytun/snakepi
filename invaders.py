@@ -35,7 +35,7 @@ def projectile_task():
 
 
     x=1
-    y=8
+    y=7
     print("Projectile assigned to thread: {}".format(threading.current_thread().name))
     print("ID of process running projectile: {}".format(os.getpid()))
     
