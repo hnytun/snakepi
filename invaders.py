@@ -48,7 +48,11 @@ def projectile_task():
     
 
 
-sense.clear()
+sense.clear(blue)
+sense.set_pixel(3,3,(0,0,0))
+
+
+"""
 ship = Ship(2,green)
 while(True):
     
@@ -64,7 +68,7 @@ while(True):
                 projectile = threading.Thread(target=projectile_task, name='projectile')
                 projectile.start()
 
-
+"""
 
 
 
