@@ -42,7 +42,8 @@ def projectile_task():
 
     while(True):
         sleep(0.05)
-        #sense.set_pixel(x,y,gray)
+        if(y != 7):
+            sense.set_pixel(x,y,gray)
         y-=1
         if(y != -1):
             sense.set_pixel(x,y,blue)
