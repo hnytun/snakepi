@@ -41,7 +41,7 @@ while(True):
         if event.action == "pressed":
             if(event.direction == "left"):
                 ship.move("left")
-            if(event.direction == "right":
+            if(event.direction == "right"):
                 ship.move("right")
         
 
