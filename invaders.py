@@ -27,7 +27,7 @@ class Ship:
         self.render()
 
     def render(self):
-        sense.set_pixel(self.x,7,self.color)
+        sense.set_pixel(self.x,self.y,self.color)
 
 
 
@@ -52,7 +52,7 @@ def projectile_task():
 
 sense.clear()
 
-ship = Ship(2,green)
+ship = Ship(2,7,green)
 while(True):
     
     
