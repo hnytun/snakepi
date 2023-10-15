@@ -31,10 +31,10 @@ class Ship:
 
 
 
-def projectile_task():
+def projectile_task(arg):
 
 
-    x=1
+    x=arg
     y=7
     print("Projectile assigned to thread: {}".format(threading.current_thread().name))
     print("ID of process running projectile: {}".format(os.getpid()))
@@ -71,7 +71,7 @@ while(True):
             if(event.direction == "right" and ship.x < 7):
                 ship.move("right")
             if(event.direction == "up"):
-                projectile = threading.Thread(target=projectile_task, name='projectile')
+                projectile = threading.Thread(target=projectile_task,args=(ship.x) name='projectile')
                 projectile.start()
 
 
