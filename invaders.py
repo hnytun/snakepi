@@ -71,7 +71,7 @@ while(True):
             if(event.direction == "right" and ship.x < 7):
                 ship.move("right")
             if(event.direction == "up"):
-                projectile = threading.Thread(target=projectile_task, name='projectile', args=(ship.x))
+                projectile = threading.Thread(target=projectile_task, name='projectile', args=(ship.x,))
                 projectile.start()
 
 
