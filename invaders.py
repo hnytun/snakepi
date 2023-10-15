@@ -83,7 +83,7 @@ def invader_task():
 
 while(True):
 
-    print(game_over)
+    
     if(game_over):
         print("game over!")
         break
