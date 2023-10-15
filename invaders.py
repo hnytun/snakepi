@@ -40,7 +40,7 @@ def projectile_task():
     
 
     for i in range(7, -1, -1):
-        sense.set_pixel(x,i+1,gray)
+        sense.set_pixel(x,i-1,gray)
         sense.set_pixel(x,i,blue)
 
     sense.clear()
@@ -48,10 +48,7 @@ def projectile_task():
     
 
 
-sense.clear(blue)
-sense.set_pixel(3,3,(0,0,0))
-
-
+sense.clear()
 
 ship = Ship(2,green)
 while(True):
