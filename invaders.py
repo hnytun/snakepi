@@ -4,6 +4,7 @@ from random import randrange
 import threading
 import os
 
+sense = SenseHat()
 green = (0,255,0)
 blue = (0,0,255)
 
