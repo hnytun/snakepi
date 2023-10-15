@@ -18,7 +18,7 @@ class Ship:
         self.color = color
 
     def render(self):
-        sense.set_pixel(self.x,0,color)
+        sense.set_pixel(self.x,0,self.color)
     
     def move(self,direction):
         if(direction == "left"):
