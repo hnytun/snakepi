@@ -66,8 +66,10 @@ def invader_task():
     for i in range(8):
         print("projectile: ",(x,i))
         print("ship: ", (ship.x,ship.y))
+        projectile_positions.append((x,i))
         if((x,i) == (ship.x,ship.y)):
             game_over = True
+
         #remove last pixel
         if(i != 0):
             sense.set_pixel(x,i-1,gray)
@@ -88,6 +90,7 @@ while(True):
         print("game over!")
         break
 
+    print(projectile_positions)
     if(not invader_exist):
         invader = threading.Thread(target=invader_task, name='invader')
         invader.start()
