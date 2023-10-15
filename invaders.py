@@ -40,6 +40,7 @@ def projectile_task():
     
 
     for i in range(7, -1, -1):
+        sleep(0.5)
         sense.set_pixel(x,i-1,gray)
         sense.set_pixel(x,i,blue)
 
