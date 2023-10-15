@@ -33,6 +33,7 @@ class Ship:
 
 ship = Ship(2,green)
 while(True):
+    sense.clear()
     sleep(0.5)
     
     for event in sense.stick.get_events():
