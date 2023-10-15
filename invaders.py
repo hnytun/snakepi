@@ -38,7 +38,7 @@ sense.clear()
 ship = Ship(2,7,green)
 
 def projectile_task(ship_position_x):
-    global game_over
+
     x=ship_position_x
     y=7
     print("ID of process running projectile: {}".format(os.getpid()))
@@ -56,7 +56,7 @@ def projectile_task(ship_position_x):
     
 
 def invader_task():
-
+    global game_over
     x=randrange(8)
     y=0
     
