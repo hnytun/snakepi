@@ -90,7 +90,6 @@ while(True):
         print("game over!")
         break
 
-    print(projectile_positions)
     if(not invader_exist):
         invader = threading.Thread(target=invader_task, name='invader')
         invader.start()
