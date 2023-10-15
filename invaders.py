@@ -65,6 +65,8 @@ while(True):
     if(not invader_exist):
         invader = threading.Thread(target=invader_task, name='invader')
         invader.start()
+        invader_exist=True
+        
     for event in sense.stick.get_events():
         # Check if the joystick was pressed
         if event.action == "pressed":
