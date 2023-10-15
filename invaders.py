@@ -33,7 +33,7 @@ class Ship:
     
 
 
-
+sense.clear()
 ship = Ship(2,green)
 while(True):
     sleep(0.5)
