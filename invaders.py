@@ -57,14 +57,15 @@ def invader_task():
     
     print("ID of process running projectile: {}".format(os.getpid()))
 
-    for i in range(0,8):
+    for i in range(0,9):
         sleep(1)
 
         sense.set_pixel(x,i,red)
         if(i != 0):
             sense.set_pixel(x,i-1,gray)
 
-    sense.set_pixel(x,7,gray)
+        
+   
     
 
 sense.clear()
