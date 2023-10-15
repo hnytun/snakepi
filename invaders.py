@@ -38,7 +38,8 @@ def projectile_task():
     print("ID of process running projectile: {}".format(os.getpid()))
     
 
-
+    for i in range(0,10):
+        print("pew")
 
     
 
