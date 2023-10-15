@@ -12,15 +12,10 @@ blue = (0,0,255)
 
 class Ship:
 
-    
-    
     def __init__(self,x,color):
         self.x=x
         self.color = color
         self.render()
-
-    def render(self):
-        sense.set_pixel(self.x,7,self.color)
     
     def move(self,direction):
         sense.clear()
@@ -29,6 +24,9 @@ class Ship:
         else:
             self.x +=1
         self.render()
+        
+    def render(self):
+        sense.set_pixel(self.x,7,self.color)
 
 
     
