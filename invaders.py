@@ -39,8 +39,8 @@ def projectile_task():
     print("ID of process running projectile: {}".format(os.getpid()))
     
 
-    for i in range(8, -1, -1):
-        sense.set_pixel(x,i-1,gray)
+    for i in range(7, -1, -1):
+        sense.set_pixel(x,i+1,gray)
         sense.set_pixel(x,i,blue)
 
     sense.clear()
