@@ -31,14 +31,12 @@ class Ship:
 
 
 
-def projectile_task(x_arg):
+def projectile_task(ship_position_x):
 
-
-    x=x_arg
+    x=ship_position_x
     y=7
     print("ID of process running projectile: {}".format(os.getpid()))
     
-
     while(True):
         sleep(0.05)
         if(y != 7):
@@ -49,10 +47,6 @@ def projectile_task(x_arg):
         else:
             sense.set_pixel(x,y+1,gray)
             break
-        
-
-    
-
     
 
 
