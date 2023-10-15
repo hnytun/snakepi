@@ -8,6 +8,7 @@ sense = SenseHat()
 green = (0,255,0)
 blue = (0,0,255)
 gray=(0,0,0)
+red=(232,41,41)
 
 
 class Ship:
@@ -30,7 +31,6 @@ class Ship:
         sense.set_pixel(self.x,self.y,self.color)
 
 
-
 def projectile_task(ship_position_x):
 
     x=ship_position_x
@@ -49,13 +49,19 @@ def projectile_task(ship_position_x):
             break
     
 
+def invader_task():
+
+    y=7
+    x=randrange(8)
+    sense.set_pixel(x,y,red)
+    print("ID of process running projectile: {}".format(os.getpid()))
 
 sense.clear()
 
 ship = Ship(2,7,green)
 while(True):
-    
-    
+    invader = threading.Thread(target=invader_task, name='invader')
+    invader.start()
     for event in sense.stick.get_events():
         # Check if the joystick was pressed
         if event.action == "pressed":
@@ -64,7 +70,6 @@ while(True):
             if(event.direction == "right" and ship.x < 7):
                 ship.move("right")
             if(event.direction == "up"):
-                print(ship.x)
                 projectile = threading.Thread(target=projectile_task, name='projectile', args=[ship.x])
                 projectile.start()
 
