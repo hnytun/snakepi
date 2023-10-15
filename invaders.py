@@ -7,18 +7,19 @@ import os
 sense = SenseHat()
 green = (0,255,0)
 blue = (0,0,255)
-
+gray=(0,0,0)
 
 
 class Ship:
 
-    def __init__(self,x,color):
+    def __init__(self,x,y,color):
         self.x=x
+        self.y=y
         self.color = color
         self.render()
     
     def move(self,direction):
-        sense.clear()
+        sense.set_pixel(self.x,self.y,gray)
         if(direction == "left"):
             self.x -=1
         else:
@@ -32,7 +33,7 @@ class Ship:
 
 def projectile_task():
 
-    gray=(0,0,0)
+
     x=1
     y=8
     print("Projectile assigned to thread: {}".format(threading.current_thread().name))
