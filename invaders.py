@@ -16,14 +16,15 @@ class Ship:
         self.x=x
         self.color = color
 
-
+    def render(self):
+        sense.set_pixel(self.x,0,color)
+    
     def move(self,direction):
         if(direction == "left"):
             self.x -=1
         else:
             self.x +=1
-    def render(self):
-        sense.set_pixel(self.x,0,color)
+        self.render()
 
 
     
