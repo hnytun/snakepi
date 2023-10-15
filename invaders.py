@@ -42,9 +42,9 @@ while(True):
     for event in sense.stick.get_events():
         # Check if the joystick was pressed
         if event.action == "pressed":
-            if(event.direction == "left"):
+            if(event.direction == "left" and ship.x > 0):
                 ship.move("left")
-            if(event.direction == "right"):
+            if(event.direction == "right" and ship.x < 7):
                 ship.move("right")
         
 
