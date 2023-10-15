@@ -12,6 +12,7 @@ blue = (0,0,255)
 
 class Ship:
 
+    self.color=green
     
     def __init__(self,x,color):
         self.x=x
