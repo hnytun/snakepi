@@ -24,12 +24,24 @@ class Ship:
         else:
             self.x +=1
         self.render()
-        
+
     def render(self):
         sense.set_pixel(self.x,7,self.color)
 
 
-    
+
+def projectile_task():
+
+    x=1
+    y=7
+    print("Projectile assigned to thread: {}".format(threading.current_thread().name))
+    print("ID of process running projectile: {}".format(os.getpid()))
+    while(y<7):
+
+
+
+
+    while()
 
 
 sense.clear()
@@ -44,7 +56,9 @@ while(True):
                 ship.move("left")
             if(event.direction == "right" and ship.x < 7):
                 ship.move("right")
-        
+            if(event.direction == "up"):
+                projectile = threading.Thread(target=projectile_task, name='projectile')
+                projectile.start()
 
 
 
