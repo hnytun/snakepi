@@ -47,7 +47,7 @@ def projectile_task():
         if(y != -1):
             sense.set_pixel(x,y,blue)
         else:
-            sense.set_pixel(x,y,gray)
+            sense.set_pixel(x,y-1,gray)
             break
         
 
