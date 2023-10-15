@@ -50,9 +50,10 @@ def projectile_task(ship_position_x):
     
 
 def invader_task():
-
-    y=7
+    
     x=randrange(8)
+    y=0
+    
     sense.set_pixel(x,y,red)
     print("ID of process running projectile: {}".format(os.getpid()))
 
