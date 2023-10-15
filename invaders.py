@@ -37,7 +37,7 @@ class Ship:
 sense.clear()
 ship = Ship(2,green)
 while(True):
-    sleep(0.5)
+    
     
     for event in sense.stick.get_events():
         # Check if the joystick was pressed
